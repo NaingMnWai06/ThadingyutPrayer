@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>အဖေနဲ့အမေသို့ ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Padauk', sans-serif;
+    background: linear-gradient(135deg, #160e16, #45251c, #100b15);
+    color: #fff0d2;
+    line-height: 2;
+}
+
+button, input {
+    font-family: inherit;
+}
+
+#login {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: radial-gradient(circle, #603c29, #100b15);
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px 24px;
+    border: 1px solid #e9bd69;
+    border-radius: 24px;
+    background: #20141beF;
+    text-align: center;
+    box-shadow: 0 0 35px #f2ba4a22;
+}
+
+.login-box h1 {
+    color: #ffdc91;
+    margin: 12px 0;
+}
+
+.login-box p {
+    margin-bottom: 16px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dcb66e;
+    border-radius: 10px;
+    background: #120d13;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+.gold-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #bb8236, #ffe6a4, #bb8236);
+    color: #351b10;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#error {
+    color: #ffaaaa;
+    margin-top: 10px;
+}
+
+#website {
+    display: none;
+    animation: fadeIn 1s ease;
+}
+
+.hero {
+    min-height: 75vh;
+    padding: 80px 20px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 7vw, 55px);
+    color: #ffdc91;
+    line-height: 1.8;
+    text-shadow: 0 0 25px #ffc85c55;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.hero-label {
+    color: #e7c486;
+    letter-spacing: 2px;
+}
+
+section {
+    width: min(900px, 92%);
+    margin: 35px auto;
+    padding: 28px 22px;
+    background: #241720d9;
+    border: 1px solid #d8ad5d66;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px #0003;
+}
+
+h2 {
+    text-align: center;
+    color: #ffdc91;
+    margin-bottom: 24px;
+    line-height: 1.8;
+}
+
+.family-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.photo-card {
+    padding: 12px;
+    text-align: center;
+    border-radius: 17px;
+    border: 1px solid #cba35c77;
+    background: #130d15;
+    min-width: 0;
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #d8ae65;
+}
+
+.photo-card h3 {
+    color: #ffdc91;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.photo-card p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.letter {
+    font-size: 16px;
+    text-align: justify;
+    overflow-wrap: anywhere;
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+.letter .love {
+    text-align: center;
+    color: #ffdc91;
+    font-weight: bold;
+}
+
+.candles {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 35px 0 15px;
+}
+
+.candle {
+    position: relative;
+    width: 30px;
+    height: 48px;
+    border-radius: 5px 5px 9px 9px;
+    background: linear-gradient(90deg, #a96932, #ffe0a0, #a96932);
+    box-shadow: 0 0 22px #ffbd4a44;
+}
+
+.flame {
+    position: absolute;
+    left: 8px;
+    top: -24px;
+    width: 15px;
+    height: 23px;
+    border-radius: 70% 20% 60% 50%;
+    background: linear-gradient(#fff6a0, #ff8c24);
+    box-shadow: 0 0 20px #ffae35;
+    animation: flicker .8s infinite alternate;
+}
+
+.lantern {
+    position: absolute;
+    top: 22px;
+    color: #ffdc91;
+    font-size: 44px;
+    text-shadow: 0 0 20px #ffc04d;
+    animation: glow 2s infinite alternate;
+}
+
+.left {
+    left: 5%;
+}
+
+.right {
+    right: 5%;
+}
+
+.family-message {
+    text-align: center;
+    color: #ffdc91;
+    margin-top: 24px;
+}
+
+.payment {
+    text-align: center;
+}
+
+.kpay-number {
+    font-size: clamp(23px, 5vw, 32px);
+    color: #ffdc91;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+.copy-button {
+    border: 1px solid #e5bd74;
+    background: transparent;
+    color: #ffdc91;
+    border-radius: 10px;
+    padding: 9px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.qr {
+    width: min(260px, 100%);
+    aspect-ratio: 1;
+    object-fit: contain;
+    display: block;
+    margin: 20px auto;
+    padding: 8px;
+    background: white;
+    border-radius: 12px;
+}
+
+.note {
+    color: #dbc6a8;
+    font-size: 14px;
+}
+
+footer {
+    padding: 40px 20px 60px;
+    text-align: center;
+    color: #ffdc91;
+}
+
+footer .heart {
+    font-size: 38px;
+    animation: beat 1.3s infinite;
+}
+
+@keyframes flicker {
+    from { transform: rotate(-7deg) scale(.95); }
+    to { transform: rotate(7deg) scale(1.07); }
+}
+
+@keyframes glow {
+    from { opacity: .65; }
+    to { opacity: 1; }
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+    .family-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        aspect-ratio: 4 / 3;
+    }
+
+    section {
+        padding: 22px 16px;
+    }
+
+    .letter {
+        font-size: 15px;
+    }
+
+    .lantern {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+
+<div id="login">
+    <div class="login-box">
+        <div style="font-size:55px">🪔</div>
+        <h1>အဖေနဲ့အမေသို့ ❤️</h1>
+        <p>သားရဲ့ကန်တော့လက်ဆောင်လေးကို ဖွင့်ကြည့်ဖို့<br>
+        သားရဲ့မွေးနေ့ကို ထည့်ပေးပါနော်။</p>
+
+        <form id="loginForm">
+            <input id="password" type="password"
+                   placeholder="Enter Password" required>
+            <button class="gold-button" type="submit">
+                ကန်တော့ရန် ဝင်မည် 🙏
+            </button>
+        </form>
+        <div id="error"></div>
+    </div>
+</div>
+
+<!-- WEBSITE -->
+
+<div id="website">
+
+    <header class="hero">
+        <div class="lantern left">🏮</div>
+        <div class="lantern right">🏮</div>
+
+        <p class="hero-label">HAPPY THADINGYUT FESTIVAL</p>
+        <h1>ချစ်ရတဲ့<br>အဖေနဲ့အမေသို့ ❤️</h1>
+        <p>
+            သားရဲ့ရင်ထဲက မေတ္တာတွေနဲ့<br>
+            ရိုသေမြတ်နိုးစွာ ကန်တော့လိုက်ပါတယ်။
+        </p>
+
+        <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+        </div>
+    </header>
+
+    <!-- BOTH PHOTO TYPES -->
+
+    <section>
+        <h2>💛 သားရဲ့အဖိုးတန်မိသားစု 💛</h2>
+
+        <div class="family-grid">
+
+            <div class="photo-card">
+                <img src="Foto/DadandMon.jpg" alt="အဖေနဲ့အမေ">
+                <h3>❤️ အဖေနဲ့အမေ ❤️</h3>
+                <p>သားဘဝရဲ့ အဖိုးတန်ဆုံးသူနှစ်ယောက်</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="Foto/Family.jpg" alt="မိသားစုပုံ">
+                <h3>🏡 သားတို့မိသားစု 🏡</h3>
+                <p>သားအတွက် အနွေးထွေးဆုံးအိမ်လေး</p>
+            </div>
+
+        </div>
+
+        <p class="family-message">
+            မိသားစုဆိုတာ သားဘယ်နေရာရောက်ရောက်
+            ပြန်လာချင်တဲ့ အနွေးထွေးဆုံးနေရာလေးပါ။ ❤️
+        </p>
+    </section>
+
+    <!-- FULL RESPECT LETTER -->
+
+    <section>
+        <h2>💌 သားရဲ့ကန်တော့စာ 💌</h2>
+
+        <div class="letter">
+            <p><b>ချစ်ရတဲ့ အဖေနဲ့အမေ ❤️🙏</b></p>
+
+            <p>ဒီလို မင်္ဂလာရှိတဲ့ သီတင်းကျွတ်အခါသမယလေးမှာ
+            သားအနေနဲ့ အဖေနဲ့အမေကို ရိုသေစွာ ကန်တော့လိုက်ပါတယ်။
+            သားကို မွေးဖွားပေးခဲ့ပြီး လူလားမြောက်တဲ့အထိ
+            ပင်ပန်းဆင်းရဲမှုတွေကို ကြံ့ကြံ့ခံကာ ပြုစုပျိုးထောင်ပေးခဲ့တဲ့အတွက်
+            အရမ်းကျေးဇူးတင်ပါတယ်။</p>
+
+            <p>သားအနေနဲ့ တစ်ခါတလေ စိတ်ပူအောင်လုပ်မိတာတွေ၊
+            စကားနားမထောင်မိတာတွေ၊ မသိနားမလည်လို့ စိတ်ညစ်အောင်
+            လုပ်မိခဲ့တာတွေရှိခဲ့ရင် သားရဲ့အမှားတွေကို ခွင့်လွှတ်ပေးပါနော်။
+            သားအပေါ်ထားတဲ့ အဖေနဲ့အမေရဲ့ မေတ္တာနဲ့ စေတနာတွေကို
+            သားအမြဲတမ်း တန်ဖိုးထားပါတယ်။ သားအခုချိန်ထိ
+            အဖေနဲ့အမေအတွက် အများကြီး ပြန်မလုပ်ပေးနိုင်သေးပေမဲ့
+            တစ်နေ့ကျရင် အဖေနဲ့အမေ ဂုဏ်ယူရတဲ့သားတစ်ယောက်ဖြစ်အောင်
+            ကြိုးစားသွားပါမယ်။</p>
+
+            <p>ဒီသီတင်းကျွတ်အချိန်အခါမှစပြီး အဖေနဲ့အမေ
+            ကိုယ်စိတ်နှစ်ဖြာ ကျန်းမာချမ်းသာကြပါစေ။
+            ဘေးအန္တရာယ်အပေါင်းမှ ကင်းဝေးပြီး စိတ်ချမ်းသာ၊
+            ကိုယ်ကျန်းမာနဲ့ အသက်ရှည်အနာမဲ့ကြပါစေ။
+            လိုအင်ဆန္ဒမှန်သမျှ ပြည့်ဝပြီး စိတ်ညစ်စရာတွေ၊
+            ပူပန်စရာတွေ ကင်းဝေးကာ နေ့ရက်တိုင်းမှာ
+            ပျော်ရွှင်အေးချမ်းမှုတွေနဲ့ ပြည့်စုံကြပါစေ။
+            ကုသိုလ်ကောင်းမှုတွေလည်း အမြဲပြုလုပ်နိုင်ပြီး
+            ကောင်းခြင်းမင်္ဂလာအဖြာဖြာနဲ့ ပြည့်စုံကြပါစေလို့
+            သားရင်ထဲကနေ ဆုတောင်းပေးပါတယ်။</p>
+
+            <p>သားအတွက် အဖေနဲ့အမေက ဘယ်အရာနဲ့မှ
+            အစားထိုးလို့မရတဲ့ တန်ဖိုးအရှိဆုံးသူတွေပါ။
+            သားဘယ်လောက်ပဲ ကြီးပြင်းလာပါစေ အဖေနဲ့အမေအတွက်တော့
+            သားက အမြဲတမ်း သားလေးတစ်ယောက်ပါပဲ။
+            သားဘဝမှာ အောင်မြင်မှုတွေ ရလာတဲ့တစ်နေ့
+            အဖေနဲ့အမေကို စိတ်ချမ်းသာအောင် ထားနိုင်တဲ့သားတစ်ယောက်
+            ဖြစ်ချင်ပါတယ်။</p>
+
+            <p>ဒီသီတင်းကျွတ်မှစပြီး နောင်နှစ်ပေါင်းများစွာတိုင်အောင်
+            အဖေနဲ့အမေကို သားကိုယ်တိုင် ကန်တော့ခွင့်ရပြီး
+            အနားမှာ ပြုစုစောင့်ရှောက်ခွင့်ရပါစေ။
+            အဖေနဲ့အမေ အမြဲကျန်းမာပျော်ရွှင်နေကြတာကိုပဲ
+            သားမြင်ချင်ပါတယ်။</p>
+
+            <p class="love">
+            အဖေနဲ့အမေကို အရမ်းချစ်ပါတယ်။ ❤️<br>
+            သားအပေါ် အမြဲမေတ္တာထားပြီး စောင့်ရှောက်ပေးခဲ့သမျှအတွက်
+            ကျေးဇူးအများကြီးတင်ပါတယ်။
+            </p>
+
+            <p>သီတင်းကျွတ်အခါသမယမှာ အဖေနဲ့အမေတို့အား
+            သားက ရိုသေမြတ်နိုးစွာ ကန်တော့လိုက်ပါတယ်။
+            သားရဲ့အမှားများရှိခဲ့ရင်လည်း ခွင့်လွှတ်ပေးကြပါနော်။ 🙏❤️</p>
+        </div>
+
+        <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+        </div>
+    </section>
+
+    <!-- KPAY -->
+
+    <section class="payment">
+        <h2>🎁 သားရဲ့မုန့်ဖိုးလေး 🎁</h2>
+
+        <p>
+            အဖေနဲ့အမေတို့ မုန့်ဖိုးလေးပေးချင်ရင်
+            ဒီအကောင့်လေးကို အသုံးပြုနိုင်ပါတယ်နော်။ ❤️
+        </p>
+
+        <p>KPay အကောင့်နံပါတ်</p>
+
+        <div class="kpay-number" id="kpay">
+            09780483792
+        </div>
+
+        <button class="copy-button" id="copyButton">
+            📋 နံပါတ်ကူးယူမယ်
+        </button>
+
+        <p style="margin-top:25px">🪔 KPay QR Code 🪔</p>
+
+        <img class="qr" src="Foto/Kpay.jpeg" alt="KPay QR Code">
+
+        <p class="note">
+            မုန့်ဖိုးမပေးလည်း ရပါတယ်နော်။<br>
+            အဖေနဲ့အမေ ကျန်းမာပျော်ရွှင်နေတာက
+            သားအတွက် အကြီးမားဆုံးလက်ဆောင်ပါပဲ။ ❤️
+        </p>
+    </section>
+
+    <footer>
+        <div class="heart">❤️</div>
+        <h2>သားရဲ့အချစ်ဆုံး အဖေနဲ့အမေ</h2>
+        <p>နောင်နှစ်ပေါင်းများစွာတိုင်အောင် ကျန်းမာပျော်ရွှင်ကြပါစေ။</p>
+        <p>ချစ်တဲ့သားမှ ရိုသေစွာ ကန်တော့ပါသည်။ 🙏</p>
+        <p>🪔 သီတင်းကျွတ် မင်္ဂလာပါ 🪔</p>
+    </footer>
+
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if (document.getElementById("password").value === "2532006") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("website").style.display = "block";
+        window.scrollTo(0, 0);
+    } else {
+        document.getElementById("error").textContent =
+            "မွေးနေ့မှားနေပါတယ်။ ပြန်စစ်ပေးပါနော် ❤️";
+    }
+});
+
+document.getElementById("copyButton").addEventListener("click", async function() {
+    try {
+        await navigator.clipboard.writeText("09780483792");
+        this.textContent = "✅ ကူးယူပြီးပါပြီ";
+    } catch (error) {
+        window.prompt("KPay နံပါတ်ကို ကူးယူပါ", "09780483792");
+    }
+});
+</script>
+
+</body>
+</html>
